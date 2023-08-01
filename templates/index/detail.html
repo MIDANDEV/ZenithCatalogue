@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <div class="card">
+        <div class="row">
+
+            <div class="col-md-6">
+                <br>
+                 <div class="card">
+                     <div class="card-body">
+                        <div>
+                       <img class="img-fluid " src="{{ product_detail.image.url }}" alt="image" >
+                     </div>
+                 </div>
+            </div>
+        </div>
+        <br>
+     <div class="col-md-6">
+         <br>
+                 <div class="card">
+                     <div class="card-body">
+                        <div class="card-title text-md">
+                       <h5 style="color: #193965">Nom du produit: {{ product_detail.name }}</h5>
+                        <hr>
+                     </div>
+                      <div class=" text-md" >
+                       <p style="color: #193965" >{{ product_detail.detail }} </p>
+
+                     </div>
+                         <hr>
+                     <div class="text-primary text-md">
+                         <p style="color: #f39424">PRIX: {{ product_detail.price }}FCFA</p>
+
+                     </div>
+
+
+
+                 </div>
+            </div>
+        </div>
+
+            <div class="col-md-12 mb-3">
+                 <br>
+   <center> <button class="btn btn-primary "><a href="{% url 'home' %}" class=" text-white">Retour</a></button></center>
+    </div>
+    </div>
+ </div>
+{% endblock %}

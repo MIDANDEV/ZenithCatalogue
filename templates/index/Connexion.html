@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    <br>
+    <center>
+     <div class="card col-md-4 " style="background-color: #193965">
+
+  <div class="card-body   ">
+
+            <h1 class="text-white">NOS PRODUITS</h1>
+
+
+  </div>
+</div>
+     </center>
+        <br>
+    <div class="container-fluid">
+     {% if hp %}
+    <div class="row mx-auto">
+
+        {% for prod in connexion %}
+    <div class="card mx-auto mb-2" style="width: 18rem;">
+  <img class="img-fluid " src="{{ prod.image.url }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ prod.name}}</h5>
+    <p class="card-text">{{ prod.price}}FCFA</p>
+    <a href="{% url 'detail' prod.id %}" class="btn btn-primary">Detail</a>
+  </div>
+</div>
+        {% endfor %}
+    </div>
+          {% else %}
+          <h4 class="text-center alert alert-default-warning"> IL Y'A RIEN COMME PRODUIT</h4>
+    {% endif %}
+    </div>
+{% endblock %}
