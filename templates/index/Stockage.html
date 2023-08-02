@@ -19,7 +19,7 @@
 
         {% for prod in stock %}
     <div class="card mx-auto mb-2" style="width: 18rem;">
-  <img class="img-fluid " src="{{ prod.image.url }}" class="card-img-top" alt="...">
+  <img class="img-fluid " src="{{ prod.image.url }}" class="card-img-top" alt="..." style="max-width: 100%; height: auto">
   <div class="card-body">
     <h5 class="card-title">{{ prod.name}}</h5>
     <p class="card-text">{{ prod.price}}FCFA</p>
