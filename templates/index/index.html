@@ -1,38 +1,455 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-<br>
-    <center>
-     <div class="card col-md-4 " style="background-color: #193965">
 
-  <div class="card-body   ">
+     <main id="main">
 
-            <h1 class="text-white">NOS PRODUITS</h1>
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+      <marquee behavior="scroll" direction="left" width="100%" bgcolor="#EEEEEE">
+          <h4 style="color: #f39424">NB:Stock et prix variables selon le temps. Pour plus de détails veuillez contacter le +226 02191919</h4>
+        </marquee>
+        <div class="row">
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bx-laptop"></i></div>
+              <h4 class="title"><a href="">ORDINATEUR</a></h4>
+              <p class=" description">Nous avons à notre disposition tout type d'ordinateur, allant des ordinateurs portables au bureautiques et toutes sortes de marques(Accer,Dell,HP,Lenovo,Mac etc.) </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">ELECTROMENAGER</a></h4>
+              <p class=" description">ZENITH HI-TECH dispose d'une gamme variée de produit electromenagers comme les réfrigerateurs, congelateur, lave-linge, cuisinière,four micro-ondes etc.  </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="bx bx-folder-open"></i></div>
+              <h4 class="title"><a href="">STOCKAGE</a></h4>
+              <p class=" description">Disque dur hdd ssd clé usb différentes capacité, nous avons tout à notre disposition pour vous satisfaire. n'hésitez pas à faire un tour à ZENITH HI-TECH.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="">CONNEXION</a></h4>
+              <p class=" description">Nous disposons de gamme variée d'appareil en rapport avec la connexion internet telque des clés de connexion des modèmes etc.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Featured Services Section -->
+
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide img-fluid">
+                  <img src="{% static 'assets/img/portfolio/hp1.jpg' %}" alt="">
+                </div>
+
+                <div class="swiper-slide img-fluid">
+                  <img src="{% static 'assets/img/portfolio/Dell1.jpg' %}" alt="">
+                </div>
+
+                <div class="swiper-slide img-fluid">
+                  <img src="{% static 'assets/img/portfolio/lenovo1.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide img-fluid">
+                  <img src="{% static 'assets/img/portfolio/mac.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="{% static 'assets/img/portfolio/gamelenovo.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide img-fluid">
+                  <img src="{% static 'assets/img/portfolio/gameasus.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide img-fluid">
+                  <img src="{% static 'assets/img/portfolio/asus1.jpg' %}"  alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>ZENITH HI-TECH BURKINA</h3>
+              <p style="font-size: 17px">
+                  Nous sommes une entreprise spécialisée dans la vente de matériels et consommables informatiques, les fournitures bureautiques et appareils electroménagers.
+              </p>
+            </div>
+            <div class="portfolio-description">
+              <h2>Pourquoi acheter à zenith?</h2>
+                <strong>
+                     <ul style="font-size: 16px">
+                         <li>Nous avons le matériel qu'il vous faut.</li><br>
+                         <li>Des matériels d'origines qui viennent des Etats-Unis </li><br>
+                         <li>Une garantie sur tous nos produits</li><br>
+                         <li>Un service après-vente assuré</li><br>
+                         <li>Un personnel qualifié prêt à vous accompagner</li><br>
+                         <li>Une équipe jeune et dynamique</li><br>
+
+                     </ul>
+                </strong>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
 
 
-  </div>
-</div>
-     </center>
-    <br>
-    <div class="container-fluid">
-     {% if produit %}
-    <div class="row mx-auto">
 
-        {% for prod in produit %}
-    <div class="card mx-auto mb-2" style="width: 18rem;">
-    {% if prod.image %}
-  <img class="img-fluid " src="{{ prod.image.url }}" class="card-img-top" alt="..." style="max-width: 100%; height: auto">
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="5000" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Clients satisfait</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
+            <div class="count-box">
+              <i class="bi bi-laptop"></i>
+              <span data-purecounter-start="0" data-purecounter-end="25000" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Articles vendu</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="bi bi bi-people"></i>
+              <span data-purecounter-start="0" data-purecounter-end="184" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Partenaires</p>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients section-bg">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="row">
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{% static 'assets/img/clients/adv.jpg' %}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{% static 'assets/img/clients/carlecare1.png' %}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{% static 'assets/img/clients/upam.jpg' %}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{% static 'assets/img/clients/client-4.png' %}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{% static 'assets/img/clients/client-5.png' %}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{% static 'assets/img/clients/client-6.png' %}" class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Clients Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <!-- <h2>Services</h2> -->
+          <h3>Apperçu <span>de nos produit</span></h3>
+          <p>Nous avons une panoplie d'article en stock afin de vous satisfaire </p>
+        </div>
+        {% if produit %}
+        <div class="row">
+          {% for prod in produit %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100" >
+            <div class="icon-box">
+              <div class="">
+                 {% if prod.image %}
+                    <img class="img-fluid " src="{{ prod.image.url }}" class="card-img-top" alt="..." style="max-width: 100%; height: auto">
+                  {% endif %}</div><br>
+              <h4><a href="">{{ prod.name}}</a></h4>
+            <hr>
+              <p style="color: #f39424"><strong>{{ prod.price}} FCFA</strong></p><br>
+            <hr>
+              <a href="{% url 'detail' prod.id %}" class="btn text-white" style="background-color: #193965">Detail</a>
+              <a href="https://wa.me/message/7FOBLONZH7FEC1" class="btn text-white" style="background-color: #193965">Whatsapp</a>
+            </div>
+            <br>
+          </div>
+          {%endfor%}
+
+        </div>
         {% endif %}
-  <div class="card-body">
-    <h5 class="card-title">{{ prod.name}}</h5>
-    <p class="card-text">{{ prod.price}}FCFA</p>
-    <a href="{% url 'detail' prod.id %}" class="btn text-white" style="background-color: #193965">Detail</a>
-  </div>
-</div>
-        {% endfor %}
-    </div>
-    {% endif %}
-    </div>
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                 Au moment d'acheter mon ordinateur, je ne savais pas exactement quelle machine prendre en tant que comptable.J'ai donc béneficié de conseil de la part de la dynamique équipe afin de faire le bon choix.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Cela fait deux ans que j'ai acheter ma machine gamer chez Zenith hi-tech et jusque là tout va bien. Je remercie l'équipe pour leur travail acharné .
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Après avoir acheté mon ordinateur il y'a 03 mois j'avais besoin de regler quelques soucis mais j'ai été surpris que cela soit gratuit car le service après vente dure 06 mois .
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  J'ai participé au programme de paiement d'ordinateur en plusieurs tranche et j'avoue qu'en temps que fonctionnaire au revenue modeste ce programme m'a été d'une grande utilité .
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  ayant profité de la promo pour me procurer mon ordinateur je suis étonné que la qualité de ce dernier soit irréprochable.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
 
 
+{##}
+{#    <!-- ======= Team Section ======= -->#}
+{#    <section id="team" class="team section-bg">#}
+{#      <div class="container" data-aos="fade-up">#}
+{##}
+{#        <div class="section-title">#}
+{#          <h2>Equipe</h2>#}
+{#          <h3>Notre dynamique<span> Equipe</span></h3>#}
+{#          <p>Nous disposons d'une merveilleuse et dynamique équipe pour vous assister durant tout votre processus d'achat. </p>#}
+{#        </div>#}
+{##}
+{#        <div class="row">#}
+{##}
+{#          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">#}
+{#            <div class="member">#}
+{#              <div class="member-img">#}
+{#                <img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt="">#}
+{#                <div class="social">#}
+{#                  <a href=""><i class="bi bi-twitter"></i></a>#}
+{#                  <a href="https://www.facebook.com/profile.php?id=100064598356196&mibextid=ZbWKwL"><i class="bi bi-facebook"></i></a>#}
+{#                  <a href="https://instagram.com/zenith_hi_tech_burkina?igshid=MzRlODBiNWFlZA=="><i class="bi bi-instagram"></i></a>#}
+{#                  <a href="https://www.linkedin.com/in/z%C3%A9nith-hi-tech-burkina-783349241"><i class="bi bi-linkedin"></i></a>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="member-info">#}
+{#                <h4>Walter White</h4>#}
+{#                <span>Chief Executive Officer</span>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">#}
+{#            <div class="member">#}
+{#              <div class="member-img">#}
+{#                <img src="{% static 'assets/img/team/team-2.jpg' %}" class="img-fluid" alt="">#}
+{#                <div class="social">#}
+{#                  <a href=""><i class="bi bi-twitter"></i></a>#}
+{#                  <a href=""><i class="bi bi-facebook"></i></a>#}
+{#                  <a href=""><i class="bi bi-instagram"></i></a>#}
+{#                  <a href=""><i class="bi bi-linkedin"></i></a>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="member-info">#}
+{#                <h4>Sarah Jhonson</h4>#}
+{#                <span>Product Manager</span>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">#}
+{#            <div class="member">#}
+{#              <div class="member-img">#}
+{#                <img src="{% static 'assets/img/team/team-3.jpg' %}" class="img-fluid" alt="">#}
+{#                <div class="social">#}
+{#                  <a href=""><i class="bi bi-twitter"></i></a>#}
+{#                  <a href=""><i class="bi bi-facebook"></i></a>#}
+{#                  <a href=""><i class="bi bi-instagram"></i></a>#}
+{#                  <a href=""><i class="bi bi-linkedin"></i></a>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="member-info">#}
+{#                <h4>William Anderson</h4>#}
+{#                <span>CTO</span>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">#}
+{#            <div class="member">#}
+{#              <div class="member-img">#}
+{#                <img src="{% static 'assets/img/team/team-4.jpg' %}" class="img-fluid" alt="">#}
+{#                <div class="social">#}
+{#                  <a href=""><i class="bi bi-twitter"></i></a>#}
+{#                  <a href=""><i class="bi bi-facebook"></i></a>#}
+{#                  <a href=""><i class="bi bi-instagram"></i></a>#}
+{#                  <a href=""><i class="bi bi-linkedin"></i></a>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="member-info">#}
+{#                <h4>Amanda Jepson</h4>#}
+{#                <span>Accountant</span>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#        </div>#}
+{##}
+{#      </div>#}
+{#    </section><!-- End Team Section -->#}
+
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="" class="faq section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>F.A.Q</h2>
+          <h3>Questions <span>Fréquente</span></h3>
+          <p>Les questions qui sont fréquemment posées.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-xl-10">
+            <ul class="faq-list">
+
+              <li>
+                <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Offrez-vous un service après vente (SAV)? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Et bien nous avons une equipe disponible service après vente qui prend en compte toutes vos préocupations afin de vous garantir la satisfaction dont vous souhaitez.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Pouvez-vous me conseiller pour mon choix? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Nous avons des informaticiens disponible sur place et en ligne pour vous trouver la machine adaptée à votre activité:
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Avez-vous des ordinateurs à prix abordable? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    En ce qui concerne les ordinateurs, nous en avons pour tous les modèles et tous les prix. Donc vous aurez certainement satisfaction.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Est-il possible de faire un troque? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                   Malheuresement nous ne faisons pas de troque.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+
+  </main><!-- End #main -->
 {% endblock %}

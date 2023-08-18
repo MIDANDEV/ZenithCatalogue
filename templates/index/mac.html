@@ -1,35 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
-    <br>
-     <center>
-     <div class="card col-md-4 " style="background-color: #193965">
+  <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
 
-  <div class="card-body   ">
+        <div class="section-title">
+            <marquee behavior="scroll" direction="left" width="100%" bgcolor="#EEEEEE">
+                  <h4 style="color: #f39424">NB:Stock et prix variables selon le temps. Pour plus de détails veuillez contacter le +226 02191919</h4>
+                </marquee>
+          <h3>Apperçu <span>de nos ordinateurs Mac</span></h3>
+          <p>Nous avons une panoplie d'article en stock afin de vous satisfaire </p>
+        </div>
+        {% if mac %}
+        <div class="row">
+          {% for prod in mac %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="">
+                 {% if prod.image %}
+                    <img class="img-fluid " src="{{ prod.image.url }}" class="card-img-top" alt="..." style="max-width: 100%; height: auto">
+                  {% endif %}</div><br>
+              <h4><a href="">{{ prod.name}}</a></h4>
+            <hr>
+              <p style="color: #f39424"><strong>{{ prod.price}} FCFA</strong></p><br>
+            <hr>
+              <a href="{% url 'detail' prod.id %}" class="btn text-white" style="background-color: #193965">Detail</a>
+               <a href="https://wa.me/message/7FOBLONZH7FEC1" class="btn text-white" style="background-color: #193965"> Whatsapp</a>
+            </div>
+          </div>
+          {%endfor%}
 
-            <h1 class="text-white">NOS PRODUITS</h1>
-
-
-  </div>
-</div>
-     </center>
-    <br>
-    <div class="container-fluid">
-     {% if mac %}
-    <div class="row mx-auto">
-
-        {% for prod in mac %}
-    <div class="card mx-auto mb-2" style="width: 18rem;">
-  <img class="img-fluid " src="{{ prod.image.url }}" class="card-img-top" alt="..." style="max-width: 100%; height: auto">
-  <div class="card-body">
-    <h5 class="card-title">{{ prod.name}}</h5>
-    <p class="card-text">{{ prod.price}}FCFA</p>
-    <a href="{% url 'detail' prod.id %}" class="btn btn-primary">Detail</a>
-  </div>
-</div>
-        {% endfor %}
-    </div>
-          {% else %}
-          <h4 class="text-center alert alert-default-warning"> IL Y'A RIEN COMME PRODUIT</h4>
-    {% endif %}
-    </div>
+        </div>
+        {% endif %}
+      </div>
+    </section><!-- End Services Section -->
 {% endblock %}

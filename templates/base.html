@@ -1,40 +1,76 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <title>Zenith hi-tech Burkina</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/Logo .png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
-     <!-- jquery -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-    crossorigin="anonymous"></script>
-    <title>Zenith Hi Tech</title>
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: BizLand
+  * Updated: Jul 27 2023 with Bootstrap v5.3.1
+  * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-<body>
-  <!-- header  -->
-  <header style="background-image: url('{% static 'images/Bienvenue.jpg' %}')">
-  <nav class="navbar navbar-expand-lg " style="background-color:#193965">
-  <div class="container-fluid">
-    <a class="navbar-brand text-white " href="#" >ZENITH HI-TECH </a>
-    <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
-      <span class="navbar-toggler-icon " ></span>
-    </button>
-    <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active " aria-current="page" href=" {% url 'home' %}" style="color: #f49424">Accueil</a>
-        </li>
 
-        <li class="nav-item dropdown ml-3">
-          <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f49424">
-            Ordinateur
-          </a>
-          <ul class="dropdown-menu">
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:burkinazenith@gmail.com">burkinazenith@gmail.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+226 02191919</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="https://www.tiktok.com/@zenithhitech?_t=8etLyaT80Un&_r=1" class="twitter"><i class="bi bi-tiktok"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100064598356196&mibextid=ZbWKwL" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://instagram.com/zenith_hi_tech_burkina?igshid=MzRlODBiNWFlZA==" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/z%C3%A9nith-hi-tech-burkina-783349241" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <!-- <h1 class="logo"><a href="index.html">ZENITH HI-TECH<span>.</span></a></h1> -->
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="index.html" class="logo"><img src="{% static 'assets/img/Logo .png' %}" width="50px" height="50px" alt=""></a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+         <li><a class="nav-link scrolto active" href=" {% url 'home' %}">Accueil</a></li>
+          <li><a class="nav-link " href="{% url 'bureautique' %}">Bureautique</a></li>
+          <li><a class="nav-link " href="{% url 'connexion' %}">Connexion</a></li>
+          <li><a class="nav-link  " href="{% url 'electromenager' %}">Electromenager</a></li>
+          <li class="dropdown"><a href="#"><span>ORDINATEUR</span> <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{% url 'accer_list' %}" style="color: #193965">Accer</a></li>
               <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="{% url 'dell_list' %}" style="color: #193965">Dell</a></li>
@@ -45,43 +81,232 @@
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="{% url 'mac_list' %}" style="color: #193965">MAC</a></li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link ml-3 " href="{% url 'bureautique' %}" style="color: #f49424">Bureautique</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link ml-3 " href="{% url 'stockage' %}" style="color: #f49424">Stockage</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link ml-3 " href="{% url 'connexion' %}" style="color: #f49424">Connexion</a>
-        </li>
-           <li class="nav-item">
-          <a class="nav-link ml-3 " href="{% url 'electromenager' %}" style="color: #f49424">Electromenager</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit" >Chercher</button>
-      </form>
+          </li>
+          <li><a class="nav-link " href="{% url 'stockage' %}">Stockage</a></li>
+
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center" >
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+
+
+    </div>
+  </section><!-- End Hero -->
+
+{% block content %}
+
+
+  {% endblock %}
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <h3><span>Nous contacter</span></h3>
+          <p>Vous avez toutes les informations pour prendre attache avec nous.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6">
+            <div class="info-box mb-4">
+              <i class="bx bx-map"></i>
+              <h3>Notre Adresse</h3>
+              <p>1200 logemnet</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-box  mb-4">
+              <i class="bx bx-envelope"></i>
+              <h3>Email</h3>
+              <p>burkinazenith@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-box  mb-4">
+              <i class="bx bx-phone-call"></i>
+              <h3>Appel/whatsapp</h3>
+              <p>+226 02 19 19 19</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-6 ">
+            <img src="{% static 'assets/img/logo1.jpg' %}" class="img-fluid" width="400px" height="300px" alt="">
+          </div>
+
+          <div class="col-lg-6">
+            <form action="{% url 'sendmail' %}" method="post" role="form" class="php-email-form">
+                {% csrf_token %}
+              <div class="row">
+                <div class="col form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Votre nom" required>
+                </div>
+                <div class="col form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Votre email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="objet" required>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Votre message a été envoyé. Message!</div>
+              </div>
+              <div class="text-center"><button type="submit">ENVOYER</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h4>Rejoindre notre Newsletter</h4>
+            <p>soyez informé de nos nouveaux arrivage et promo en cours</p>
+            <form action="{% url 'subscribe' %}" method="post">
+                {% csrf_token %}
+              <input type="email" name="email"><input type="submit" value="S'incrire">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h3>Zenith hi-tech<span>.</span></h3>
+            <p>
+              1200 logement <br>
+              13 BP 1190 Ouagadougou 13<br>
+              Burkina Faso <br><br>
+              <strong>Phone:</strong> +226 02 19 19 19/54 89 89 46/79 19 42 42<br>
+              <strong>Email:</strong> burkinazenith@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h3>Menu</h3>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href=" {% url 'home' %}">Accueil</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'connexion' %}">Connexion</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'stockage' %}">Stockage</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'bureautique' %}">Bureautique</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'electromenager' %}">Electromenager</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h3>Nos reseaux sociaux</h3>
+            <p>Pour avoir les dernières offre de Zenith hi-tech suivez sur les reseaux.</p>
+            <div class="social-links mt-3">
+              <a href="https://www.tiktok.com/@zenithhitech?_t=8etLyaT80Un&_r=1" class="twitter"><i class="bx bxl-tiktok"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=100064598356196&mibextid=ZbWKwL" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://instagram.com/zenith_hi_tech_burkina?igshid=MzRlODBiNWFlZA==" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/z%C3%A9nith-hi-tech-burkina-783349241" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>ZENITH HI-TECH</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
+        Built by <a href="https://www.codimarkplus.com/">codimarkplus</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+{#  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>#}
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+{% for message in messages %}
+    {% if message.tags == 'success' %}
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function (){
+        $('#exampleModal').modal('show')
+    })
+    </script>
+    {% endif %}
+{% endfor %}
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-check"></i>Parfait!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="justify-content-center">
+            <i class="fas fa-check-circle" style="color: #193965"></i>
+            <br>
+            <div class="mb-3"><strong>Message envoyé avec succès </strong></div>
+            <h6>Nous avons reçu votre message nous vous repondrons le plus rapidement possible</h6>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fermer</button>
+
+      </div>
     </div>
   </div>
-</nav>
-  </header>
-      <div class="content-wrapper">
-          <div class="content">
-          <img class="img-fluid "  src="{% static 'images/Bannière catalogue.jpg' %}"  style="max-width: 100%; height: auto">
-                <br>
-               {% block content %}
+</div>
 
-                {% endblock content %}
-          </div>
-      </div>
-
-
-  </div>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
+
 </html>
+
+
+
+

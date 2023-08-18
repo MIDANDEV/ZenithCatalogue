@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from .models import *
 from django.contrib import messages
+from django.core.mail import send_mail
 # Create your views here.
 
 def home(request):
 
-    produit=Product.objects.all().order_by('-created_at')
+    produit=Product.objects.all().order_by('-created_at')[:6]
+
 
     context={
         'produit':produit
@@ -55,20 +57,20 @@ def mac_list(request):
 
 
 def addProduct(request):
-    nom= request.POST.get('name',None)
-    image=request.POST.get('image',None)
-    categorie=request.POST.get('category')
-    marque=request.POST.get('marque',None)
-    prix=request.POST.get('price',None)
-    detail=request.POST.get('detail',None)
+    if request.method == 'POST':
+        nom= request.POST.get('name',None)
+        image=request.FILES.get('image',None)
+        categorie=request.POST.get('category')
+        marque=request.POST.get('marque',None)
+        prix=request.POST.get('price',None)
+        detail=request.POST.get('detail',None)
 
-    new_product=Product.objects.create(name=nom, image=image, categorie=categorie, marque=marque, price=prix, detail=detail)
+        if categorie:
+            new_product=Product.objects.create(name=nom, image=image, categorie=categorie, marque=marque, price=prix, detail=detail)
+            new_product.save()
 
-    if request.method=='POST':
-        new_product.save()
-
-    if new_product:
-        messages.success(request,'Nouveau produit ajouté avec succès.')
+            messages.success(request,'Nouveau produit ajouté avec succès.')
+        return redirect('addProduct')
 
 
     return render(request,'ajout.html')
@@ -109,3 +111,37 @@ def electromenager(request):
         'electromenager':electromenager
     }
     return render(request,'index/Electromenager.html',context)
+
+def subscribe(request):
+    if request.method=='POST':
+        email=request.POST.get('email')
+        if email:
+            newmail= Newsletter.objects.create(email=email)
+            newmail.save()
+            return redirect('home')
+
+    return render(request, 'base.html')
+
+def sendmail(request):
+    if request.method=='POST':
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        objet=request.POST.get('subject')
+        content=request.POST.get('message')
+
+        data={
+            'name':name,
+            'email':email,
+            'objet':objet,
+            'content':content
+        }
+
+        message= '''
+            Nouveau message:{}
+            De:{}
+        '''.format(data['content'], data['email'])
+
+
+        send_mail(data['objet'], message,data['email'], ['burkinazenith@gmail.com'])
+        messages.success('Message envoyé avec succès !')
+    return render(request, 'base.html')

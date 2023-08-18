@@ -24,14 +24,21 @@ class  Product(models.Model):
         ('MAC', 'MAC'),
         ('Au', 'Autre')
     )
-    name=models.CharField(max_length=100,blank=True,null=True)
-    marque=models.CharField(max_length=200, choices=MARQUE_TYPE, null=True, blank=True)
-    image= models.ImageField(upload_to='product_image', null=False, blank=False)
-    categorie=models.CharField(max_length=100, choices=CATEGORIE_LISTE, null=True, blank=True)
-    price=models.IntegerField( null=True, blank=True)
-    detail=models.TextField(blank=True, null=True)
+    name=models.CharField(max_length=100,blank=False, null=True)
+    marque=models.CharField(max_length=200, choices=MARQUE_TYPE, blank=False, null=True)
+    image= models.ImageField(upload_to='product_image/')
+    categorie=models.CharField(max_length=100, choices=CATEGORIE_LISTE, blank=False, null=True)
+    price=models.IntegerField(blank=False, null=True)
+    detail=models.TextField(blank=False, null=True)
     created_at=models.DateTimeField(auto_now_add=True)
 
 
     def __str__(self):
         return f"{self.name}"
+
+class Newsletter(models.Model):
+    mail= models.EmailField(unique=True)
+    created_at= models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.mail}"

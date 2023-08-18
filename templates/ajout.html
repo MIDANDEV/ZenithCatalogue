@@ -2,7 +2,7 @@
 {% block content %}
     <div class="card">
   <div class="card-body">
-    <form class="row g-3 " method="post" action="{% url 'addProduct' %}">
+    <form class="row g-3 " method="post" action="{% url 'addProduct' %}" enctype="multipart/form-data">
         {% csrf_token %}
   <div class="col-md-6">
     <label for="inputname" class="form-label">Nom</label>
@@ -49,7 +49,7 @@
 
 
   <div class="col-12">
-   <center><button type="submit" class="btn btn-primary">Ajouter</button></center>
+   <center><button type="submit" class="btn text-white" style="background-color: #193965">Ajouter</button></center>
   </div>
 </form>
   </div>

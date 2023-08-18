@@ -6,3 +6,8 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Product, ProductAdmin  )
+
+class NewsletterAdmin(admin.ModelAdmin):
+    list_display = ('mail','created_at')
+
+admin.site.register(Newsletter,NewsletterAdmin)

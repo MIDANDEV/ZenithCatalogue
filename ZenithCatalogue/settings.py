@@ -27,7 +27,12 @@ SECRET_KEY = 'django-insecure--hmw$a_cuo6@q+#!m=xl59hfhd##a(1)8zhg##3(zwz7ct_2pf
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD =''
 
 # Application definition
 
@@ -85,6 +90,7 @@ DATABASES = {
 
 
 # Password validation
+
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -121,9 +127,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'),)
 
-MEDIA_URL = 'media/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 
 # Default primary key field type
