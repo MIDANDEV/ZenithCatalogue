@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-  <!-- ======= Services Section ======= -->
+ <!-- ======= Services Section ======= -->
     <section id="services" class="services">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <marquee behavior="scroll" direction="left" width="100%" bgcolor="#EEEEEE">
+              <marquee behavior="scroll" direction="left" width="100%" bgcolor="#EEEEEE">
                   <h4 style="color: #f39424">NB:Stock et prix variables selon le temps. Pour plus de détails veuillez contacter le +226 02191919</h4>
                 </marquee>
-          <h3>Apperçu <span>de nos ordinateurs Lenovo</span></h3>
+          <h3>Apperçu <span>de nos ordinateurs Accer</span></h3>
           <p>Nous avons une panoplie d'article en stock afin de vous satisfaire </p>
         </div>
-        {% if lenovo %}
+        {% if ordipro %}
         <div class="row">
-          {% for prod in lenovo %}
+          {% for prod in ordipro %}
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="">

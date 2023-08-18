@@ -2,6 +2,7 @@
 {% block content %}
     <div class="card">
   <div class="card-body">
+      <h1 class="text-bold mb-5" style="text-align: center; color: #193965">Ajout d'article</h1><hr>
     <form class="row g-3 " method="post" action="{% url 'addProduct' %}" enctype="multipart/form-data">
         {% csrf_token %}
   <div class="col-md-6">
@@ -16,10 +17,10 @@
     <label for="inputState" class="form-label">Categorie</label>
     <select id="inputState" name="category" class="form-select">
       <option selected>Choisir...</option>
-      <option value="Ordinateur">Ordinateur</option>
-      <option value="Bureautique">Bureautique</option>
-      <option value="Stockage">Stockage</option>
-      <option value="Connexion">Connexion</option>
+      <option value="Ordinateur gamer">Ordinateur gamer</option>
+      <option value="Ordinateur pro">Ordinateur pro</option>
+      <option value="Fourniture Bureautique">Fourniture Bureautique</option>
+      <option value="Accessoires">Accessoires</option>
       <option value="Electromenager">Electromenager</option>
 
     </select>
@@ -29,18 +30,7 @@
     <input type="text" name="price" class="form-control" id="inputAddress" placeholder="Entrez le montant">
   </div>
 
-   <div class="col-md-6">
-    <label for="inputState" class="form-label">Marque</label>
-    <select id="inputState" name="marque" class="form-select">
-      <option selected>Choisir...</option>
-      <option value="A">Accer</option>
-      <option value="D">Dell</option>
-      <option value="H">HP</option>
-      <option value="L">Lenovo</option>
-      <option value="M">Mac</option>
-      <option value="Au">Autre</option>
-    </select>
-  </div>
+
  <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Detail</label>
   <textarea class="form-control" name="detail" id="exampleFormControlTextarea1" rows="3"></textarea>

@@ -66,27 +66,18 @@
       <nav id="navbar" class="navbar">
         <ul>
          <li><a class="nav-link scrolto active" href=" {% url 'home' %}">Accueil</a></li>
-          <li><a class="nav-link " href="{% url 'bureautique' %}">Bureautique</a></li>
-          <li><a class="nav-link " href="{% url 'connexion' %}">Connexion</a></li>
+          <li><a class="nav-link " href="{% url 'accessoire' %}">Accessoires</a></li>
+          <li><a class="nav-link " href="{% url 'bureautique' %}">Fourniture Bureautique</a></li>
           <li><a class="nav-link  " href="{% url 'electromenager' %}">Electromenager</a></li>
           <li class="dropdown"><a href="#"><span>ORDINATEUR</span> <i class="bi bi-chevron-down"></i></a>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{% url 'accer_list' %}" style="color: #193965">Accer</a></li>
+            <li><a class="dropdown-item" href="{% url 'gamer' %}" style="color: #193965">Ordinateur gamer</a></li>
               <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'dell_list' %}" style="color: #193965">Dell</a></li>
-                <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'hp_list' %}" style="color: #193965">HP</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'lenovo_list' %}" style="color: #193965">Lenovo</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="{% url 'mac_list' %}" style="color: #193965">MAC</a></li>
+            <li><a class="dropdown-item" href="{% url 'ordipro' %}" style="color: #193965">Ordinateur professionel</a></li>
           </ul>
           </li>
-          <li><a class="nav-link " href="{% url 'stockage' %}">Stockage</a></li>
-
-
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        <i class="bi bi-list mobile-nav-toggle text-white" style="background-color: #193965; border-radius: 4px"></i>
       </nav><!-- .navbar -->
 
     </div>
@@ -94,8 +85,10 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center" >
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
-
+    <div class="container justify-content-center" data-aos="zoom-out" data-aos-delay="100">
+        <h3 class="justify-content-center" style="color: #193965; text-align: center">Bienvenue</h3>
+      <h1><span> CATALOGUE</span></h1>
+      <h2>ZENITH HI-TECH BURKINA </h2>
 
     </div>
   </section><!-- End Hero -->
@@ -217,8 +210,7 @@
             <h3>Menu</h3>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href=" {% url 'home' %}">Accueil</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'connexion' %}">Connexion</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'stockage' %}">Stockage</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'accessoire' %}">Acessoire</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'bureautique' %}">Bureautique</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'electromenager' %}">Electromenager</a></li>
             </ul>
