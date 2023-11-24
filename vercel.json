@@ -1,0 +1,28 @@
+
+{
+  "version": 1,
+  "builds": [
+    {
+      "src": "ZenithCatalogue/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+    },
+    {
+      "src": "main.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "ZenithCatalogue/wsgi.py"
+    }
+  ]
+}
