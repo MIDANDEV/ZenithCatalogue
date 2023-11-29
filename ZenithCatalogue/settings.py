@@ -147,12 +147,27 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AWS_ACCESS_KEY_ID = 'AKIAXFCPXNP7AANTPH5Q'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AKIAXFCPXNP7LGGFA374'
+AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'productzenith'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_SIGNATURE_NAME = 's3v4'
 AWS_S3_REGION_NAME = 'eu-north-1'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL =  None
 AWS_S3_VERITY = True
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# STORAGES = {
+#
+#     # Media file (image) management
+#     "default": {
+#         "BACKEND": "storages.backends.s3boto3.S3StaticStorage",
+#     },
+#
+#     # CSS and JS file management
+#     "staticfiles": {
+#         "BACKEND": "storages.backends.s3boto3.S3StaticStorage",
+#     },
+# }
