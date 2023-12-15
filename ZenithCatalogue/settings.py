@@ -11,17 +11,20 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--hmw$a_cuo6@q+#!m=xl59hfhd##a(1)8zhg##3(zwz7ct_2pf'
+SECRET_KEY =os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -91,11 +94,11 @@ WSGI_APPLICATION = 'ZenithCatalogue.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER':'postgres',
-        'PASSWORD':'f64aCdg32BggFA*B56*c44E2DeE5cdgB',
-        'HOST':'monorail.proxy.rlwy.net',
-        'PORT':'21901'
+        'NAME': os.environ.get('NAME'),
+        'USER':os.environ.get('USER'),
+        'PASSWORD':os.environ.get('PASSWORD'),
+        'HOST':os.environ.get('HOST'),
+        'PORT':os.environ.get('PORT')
     }
 }
 
@@ -147,9 +150,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AWS_ACCESS_KEY_ID = 'AKIAXFCPXNP7LGP3NZ6E'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'zenith-files'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME =os.environ.get('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_SIGNATURE_NAME = 's3v4'
 AWS_S3_REGION_NAME = 'eu-north-1'
